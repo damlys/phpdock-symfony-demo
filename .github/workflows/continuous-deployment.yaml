@@ -1,12 +1,12 @@
 name: continuous-deployment
 on:
-  push:
-    branches:
-      - develop
-      - master
-    paths:
-      - "**"
-      - "!**.md"
+  #push:
+  #  branches:
+  #    - develop
+  #    - master
+  #  paths:
+  #    - "**"
+  #    - "!**.md"
   pull_request:
     paths:
       - "**"
