@@ -1,6 +1,6 @@
-# PHPdock
+# docker-php-symfony-demo
 
-Docker starter for PHP projects
+My PHP app
 
 ## Requirements
 
