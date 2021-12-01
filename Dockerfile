@@ -114,6 +114,8 @@ FROM sdk
 
 ENV VERSION="0.1.0"
 
+ENV APP_ENV="prod"
+ENV APP_DEBUG="0"
 COPY ./app /app
 RUN composer install \
 && composer clear-cache \

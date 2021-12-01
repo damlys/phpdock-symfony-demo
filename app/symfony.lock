@@ -38,9 +38,6 @@
     "symfony/deprecation-contracts": {
         "version": "v3.0.0"
     },
-    "symfony/dotenv": {
-        "version": "v6.0.0"
-    },
     "symfony/error-handler": {
         "version": "v6.0.0"
     },
@@ -65,7 +62,6 @@
             "ref": "c0eeb50665f0f77226616b6038a9b06c03752d8e"
         },
         "files": [
-            ".env"
         ]
     },
     "symfony/framework-bundle": {

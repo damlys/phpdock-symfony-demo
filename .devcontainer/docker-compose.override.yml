@@ -2,6 +2,9 @@ services:
   app:
     user: "0"
     environment:
+      APP_ENV: "dev"
+      APP_DEBUG: "1"
+      APP_SECRET: "00000000000000000000000000000000"
       PHP_OPCACHE_ENABLE: "false"
       # Logs
       CADDY_LOG_OUTPUT: "file /app/var/log/caddy.log"
