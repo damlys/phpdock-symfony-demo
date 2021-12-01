@@ -114,12 +114,9 @@ FROM sdk
 
 ENV VERSION="0.1.0"
 
-COPY ./app/composer.json ./app/composer.lock /app/
-RUN composer install \
-&& composer clear-cache
-
 COPY ./app /app
-RUN composer run-script build \
+RUN composer install \
+&& composer clear-cache \
 && chmod --recursive a+r /app \
 && chmod --recursive a+x /app/bin/* \
 && chown --recursive www-data:www-data /app/var \
