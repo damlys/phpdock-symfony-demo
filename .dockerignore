@@ -55,4 +55,5 @@ vendor
 ### Application
 #############################
 
-/app/logs/*
+/app/var/cache/*
+/app/var/log/*

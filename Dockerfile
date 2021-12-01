@@ -122,7 +122,7 @@ COPY ./app /app
 RUN composer run-script build \
 && chmod --recursive a+r /app \
 && chmod --recursive a+x /app/bin/* \
-&& chown --recursive www-data:www-data /app/logs \
-&& chmod --recursive a+w /app/logs
+&& chown --recursive www-data:www-data /app/var \
+&& chmod --recursive a+w /app/var
 
 USER www-data:www-data
