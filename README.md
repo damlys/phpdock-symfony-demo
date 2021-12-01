@@ -19,11 +19,7 @@ $ docker-compose build
 $ docker-compose up --detach
 $ docker-compose exec app bash -ce "
     composer install
-    composer run-script build
     chown -R $(id -u):$(id -g) .
-    composer run-script vulnerability-scan
-    composer run-script format-check
-    composer run-script lint-check
     composer run-script unit-tests
     composer run-script http-api-tests
   "
