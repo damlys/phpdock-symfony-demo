@@ -1,6 +1,6 @@
 {
     "name": "boldare/docker-php-symfony-demo",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
