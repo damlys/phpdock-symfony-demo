@@ -1,25 +1,8 @@
 services:
-  rte:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      target: rte
-    image: boldare/docker-php-symfony-demo:rte-${VERSION:-0.1.0}
-    deploy:
-      replicas: 0
-  sdk:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      target: sdk
-    image: boldare/docker-php-symfony-demo:sdk-${VERSION:-0.1.0}
-    deploy:
-      replicas: 0
   app:
     build:
       context: .
       dockerfile: Dockerfile
-      target: app
-    image: boldare/docker-php-symfony-demo:app-${VERSION:-0.1.0}
+    image: boldare/docker-php-symfony-demo:${VERSION:-0.1.0}
     environment:
       HTTP_API_TESTS_ENTRYPOINT: http://app:8080
