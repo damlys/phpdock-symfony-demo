@@ -5,4 +5,24 @@ services:
       dockerfile: Dockerfile
     image: boldare/docker-php-symfony-demo:${VERSION:-0.1.2}
     environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USERNAME: docker
+      DB_PASSWORD: Secret123
+      DB_DBNAME: db0
       HTTP_API_TESTS_ENTRYPOINT: http://app:8080
+
+  postgres:
+    image: postgres:9.6-alpine
+    environment:
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: Secret123
+      POSTGRES_DB: db0
+    volumes:
+      - type: volume
+        source: postgres_data
+        target: /var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+    driver: local

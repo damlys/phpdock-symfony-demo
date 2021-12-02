@@ -50,7 +50,37 @@ services:
         source: ./app
         target: /app
     working_dir: /app
+
+  postgres:
+    ports:
+      - mode: host
+        target: 5432
+        published: 35432
+        protocol: tcp
+
+  pgadmin:
+    image: dpage/pgadmin4:6.2
+    environment:
+      PGADMIN_DEFAULT_EMAIL: do@ck.er
+      PGADMIN_DEFAULT_PASSWORD: Secret123
+    ports:
+      - mode: host
+        target: 80
+        published: 30080
+        protocol: tcp
+    volumes:
+      - type: bind
+        # https://www.pgadmin.org/docs/pgadmin4/6.2/import_export_servers.html
+        source: ./etc/pgadmin-servers.json
+        # https://www.pgadmin.org/docs/pgadmin4/6.2/container_deployment.html#mapped-files-and-directories
+        target: /pgadmin4/servers.json
+      - type: volume
+        source: pgadmin_data
+        target: /var/lib/pgadmin
+
 volumes:
   composer_cache:
     driver: local
     name: global_composer_cache
+  pgadmin_data:
+    driver: local
